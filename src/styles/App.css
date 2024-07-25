@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(229, 229, 229);
+}
+
+.moviesapp {
+  font-family: Inter;
+}
+#root {
+  padding: 0;
+  margin: 0;
+}
