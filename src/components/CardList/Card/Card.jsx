@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Card.module.css';
 
-const Card = ({ movie }) => {
+function Card({ movie }) {
   return (
     <>
       {movie.map((item) => (
@@ -12,8 +12,8 @@ const Card = ({ movie }) => {
             <h1 className={classes.Title}>{item.name}</h1>
             <p className={classes.Date}>March 5, 2020</p>
             <div className="btns">
-              <button className={classes.Btn}></button>
-              <button className={classes.Btn}></button>
+              <p className={classes.Genre}>#</p>
+              <p className={classes.Genre}>#</p>
             </div>
             <p className={classes.Par}>{item.description}</p>
           </div>
@@ -21,6 +21,6 @@ const Card = ({ movie }) => {
       ))}
     </>
   );
-};
+}
 
 export default Card;

@@ -1,0 +1,11 @@
+.Cards {
+  background: rgb(255, 255, 255);
+  width: 1025px;
+  margin: 0 auto;
+}
+.CardsList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 990px;
+  min-height: 350px;
+}
