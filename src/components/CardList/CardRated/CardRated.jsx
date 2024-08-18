@@ -1,11 +1,11 @@
 import React from 'react';
 import { Alert, Rate } from 'antd';
-import './Card.css'
+import './CardRated.css'
 import { format } from 'date-fns';
 
-import img from '../CardRated/images/i.jpeg'
+import img from './images/i.jpeg';
 
-function Card({ item, error, onRated, genres }) {
+function CardRated({ item, error, genres }) {
   const cutText = (text, title, maxLength, el = '...') => {
     const wordsTitle = title.split(' ')
     if (text.length <= maxLength && wordsTitle.length < 3) {
@@ -16,9 +16,6 @@ function Card({ item, error, onRated, genres }) {
     }
     return text.slice(0, maxLength) + el
   }
-  const setRating = (value) => {
-    onRated(item, value);
-  }
   const filteredGenres = genres.filter((genre) => item.genres.some((id) => genre.id === id)).slice(0, 2);
   const changeColor = (popularity) => {
     if (popularity <= 3) {
@@ -27,7 +24,7 @@ function Card({ item, error, onRated, genres }) {
       return 'popularity_orange'
     } if (popularity > 5 && popularity <= 7) {
       return 'popularity_yellow'
-    } 
+    }
     return 'popularity_green'
   }
   return (
@@ -49,7 +46,7 @@ function Card({ item, error, onRated, genres }) {
             </div>
             <p className="par">{cutText(item.description, item.name, 190)}</p>
             {/* {starValue ? <span>{stars[starValue - 1]}</span> : null} */}
-            <Rate style={{ position: 'absolute', bottom: 20, width: 275 }} value={item.rating} count={10} onChange={setRating} />
+            <Rate style={{ position: 'absolute', bottom: 20, width: 275 }} value={item.rating} count={10} />
           </div>
         </li>
       ) : (
@@ -66,4 +63,4 @@ function Card({ item, error, onRated, genres }) {
   );
 }
 
-export default Card;
+export default CardRated;

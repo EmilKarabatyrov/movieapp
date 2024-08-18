@@ -7,9 +7,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "airbnb"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -18,13 +18,16 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "import"],
+  "plugins": ["react", "import"],
   "rules": {
     "indent": ["error", 2],
-    "prettier/prettier": "error",
+    "consistent-return": "off",
+    "object-curly-newline": "off",
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single"],
     "semi": "off",
+    "max-len": ["error", { "code": 250 }],
+    "no-trailing-spaces": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
     "import/no-unresolved": [2, { "caseSensitive": false}],
